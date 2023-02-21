@@ -5,42 +5,42 @@
 class Cpm < Formula
   desc "NEO Blockchain Contract Package Manager"
   homepage "https://github.com/CityOfZion/cpm"
-  version "0.2.0"
+  version "0.2.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/CityOfZion/cpm/releases/download/v0.2.0/cpm_0.2.0_darwin_amd64"
-      sha256 "a3d10987f01fe1981faa0edf83d75a463f76896716eb1db54a00d26be43b9aea"
+      url "https://github.com/CityOfZion/cpm/releases/download/v0.2.1/cpm_0.2.1_darwin_amd64"
+      sha256 "32a6b3e0e33d7d81bbd9b37d9ec4aef563ba5d29f9c28de57c99ea8ee8ab3af0"
 
       def install
-        bin.install "cpm_0.2.0_darwin_amd64" => "cpm"
+        bin.install "cpm_0.2.1_darwin_amd64" => "cpm"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/CityOfZion/cpm/releases/download/v0.2.0/cpm_0.2.0_darwin_arm64"
-      sha256 "1ff29a5ad98566668f745de5bba0c01e52e49c352a64dad65ac0d6cb0d542d40"
+      url "https://github.com/CityOfZion/cpm/releases/download/v0.2.1/cpm_0.2.1_darwin_arm64"
+      sha256 "ed3a6ad59912e1e8143f64c728c1b29c32c02b55fe6b580c41560b2e0e289dbe"
 
       def install
-        bin.install "cpm_0.2.0_darwin_arm64" => "cpm"
+        bin.install "cpm_0.2.1_darwin_arm64" => "cpm"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/CityOfZion/cpm/releases/download/v0.2.0/cpm_0.2.0_linux_amd64"
-      sha256 "f2d167b86061a6639cf70d5bea0001c2ce1a6d18cdf53a0b79a50e3f123df5e7"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/CityOfZion/cpm/releases/download/v0.2.1/cpm_0.2.1_linux_arm64"
+      sha256 "010bc9c87a4c0ec60a7fc4dca43cc336d5e74202d088395d20012ea29427417d"
 
       def install
-        bin.install "cpm_0.2.0_linux_amd64" => "cpm"
+        bin.install "cpm_0.2.1_linux_arm64" => "cpm"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/CityOfZion/cpm/releases/download/v0.2.0/cpm_0.2.0_linux_arm64"
-      sha256 "12e9b95f825308bbc526fff2b03a9c86db6fe2e93d1d7e50cbf87ca025b01d43"
+    if Hardware::CPU.intel?
+      url "https://github.com/CityOfZion/cpm/releases/download/v0.2.1/cpm_0.2.1_linux_amd64"
+      sha256 "1018df6cdb88e2dbe8f6e17d6f97c2d7a9510c387cccffc505fb2dcdeeec2eab"
 
       def install
-        bin.install "cpm_0.2.0_linux_arm64" => "cpm"
+        bin.install "cpm_0.2.1_linux_amd64" => "cpm"
       end
     end
   end
