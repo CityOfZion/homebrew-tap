@@ -5,20 +5,20 @@
 class Cpm < Formula
   desc "NEO Blockchain Contract Package Manager"
   homepage "https://github.com/CityOfZion/cpm"
-  version "0.7.1"
+  version "1.0.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/CityOfZion/cpm/releases/download/v0.7.1/cpm_0.7.1_darwin_arm64.tar.gz"
-      sha256 "942be861093b66779f7afe510c21660058d8049b6855969ec4baf96a54ed4309"
+      url "https://github.com/CityOfZion/cpm/releases/download/v1.0.0/cpm_1.0.0_darwin_arm64.tar.gz"
+      sha256 "27ffb86626828e51193c793fe62a92acfcc9f2bc099eecf6df1054720530b8ad"
 
       def install
         bin.install "cpm"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/CityOfZion/cpm/releases/download/v0.7.1/cpm_0.7.1_darwin_amd64.tar.gz"
-      sha256 "a4baa2e9b37f83ce922e26e9c36b021221e37f928d93e92ea8c5413eb5cb2297"
+      url "https://github.com/CityOfZion/cpm/releases/download/v1.0.0/cpm_1.0.0_darwin_amd64.tar.gz"
+      sha256 "7b4868e971f022b282bba10772c197a49fff6cc74ca4c874fbe05a17457b37c8"
 
       def install
         bin.install "cpm"
@@ -28,16 +28,16 @@ class Cpm < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/CityOfZion/cpm/releases/download/v0.7.1/cpm_0.7.1_linux_arm64.tar.gz"
-      sha256 "fe9e3cd55cc650cd906c20af717340a9eedc5682597cc8d33d50df7734319c4f"
+      url "https://github.com/CityOfZion/cpm/releases/download/v1.0.0/cpm_1.0.0_linux_arm64.tar.gz"
+      sha256 "55b3d8991f13a58f41f2330085184578da172c7ce6889b0864c56cf17b5b92cb"
 
       def install
         bin.install "cpm"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/CityOfZion/cpm/releases/download/v0.7.1/cpm_0.7.1_linux_amd64.tar.gz"
-      sha256 "5b7b993a1e790e61c68b5bca127a51df91b95506f16daca916f9686cf1682b69"
+      url "https://github.com/CityOfZion/cpm/releases/download/v1.0.0/cpm_1.0.0_linux_amd64.tar.gz"
+      sha256 "9f51b0c9e07f05d59842536d4adba6687288905c4c8fb0849e15753cdf353ca6"
 
       def install
         bin.install "cpm"
