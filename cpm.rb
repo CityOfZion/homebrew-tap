@@ -5,20 +5,20 @@
 class Cpm < Formula
   desc "NEO Blockchain Contract Package Manager"
   homepage "https://github.com/CityOfZion/cpm"
-  version "1.1.0"
+  version "1.1.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/CityOfZion/cpm/releases/download/v1.1.0/cpm_1.1.0_darwin_amd64.tar.gz"
-      sha256 "b27d57d62057a798204897406a2854a5b8e89d31d4aeffd95372e2e39be7c399"
+      url "https://github.com/CityOfZion/cpm/releases/download/v1.1.1/cpm_1.1.1_darwin_amd64.tar.gz"
+      sha256 "e842fe1a5ad4f5a69b3dec5f1934ca88d78ace34158341b0e7fe80538f5fe786"
 
       def install
         bin.install "cpm"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/CityOfZion/cpm/releases/download/v1.1.0/cpm_1.1.0_darwin_arm64.tar.gz"
-      sha256 "e5fa10baf68d19d9748bebc01500e597f118d80ca0a69edf1ceabd1cc61493f8"
+      url "https://github.com/CityOfZion/cpm/releases/download/v1.1.1/cpm_1.1.1_darwin_arm64.tar.gz"
+      sha256 "febaf1e64239db7ae6bc0d90bf566be9446dbe5eef29b0c63e54f0cdb9b49289"
 
       def install
         bin.install "cpm"
@@ -28,19 +28,23 @@ class Cpm < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/CityOfZion/cpm/releases/download/v1.1.0/cpm_1.1.0_linux_amd64.tar.gz"
-      sha256 "64fa4a7373613c59e7015fe891d6e1f595a819ecb2e60ec4df2400dcde9c3338"
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/CityOfZion/cpm/releases/download/v1.1.1/cpm_1.1.1_linux_amd64.tar.gz"
+        sha256 "963f2d87fb6a625520773eef19a82ff414487bce9f6c95966f8a18a9c59e5a08"
 
-      def install
-        bin.install "cpm"
+        def install
+          bin.install "cpm"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/CityOfZion/cpm/releases/download/v1.1.0/cpm_1.1.0_linux_arm64.tar.gz"
-      sha256 "bb6c59eb0e1bf508c87d7eb4efdccc183655291c12234eac6a1dcf5d7be95915"
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/CityOfZion/cpm/releases/download/v1.1.1/cpm_1.1.1_linux_arm64.tar.gz"
+        sha256 "c443caf190eb46b0ac19f027f231ef3d3c99f5d2a2c08a2e9f3c80edd3f0e75d"
 
-      def install
-        bin.install "cpm"
+        def install
+          bin.install "cpm"
+        end
       end
     end
   end
